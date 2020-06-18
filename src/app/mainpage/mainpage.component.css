@@ -1,0 +1,9 @@
+.container {
+    padding-top: 32px;
+}
+
+.texto-principal{
+    color: beige;
+    text-align: center;
+    display: block;
+}
