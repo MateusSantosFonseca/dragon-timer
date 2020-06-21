@@ -2,13 +2,32 @@
     padding-top: 32px;
 }
 
-.texto-principal {
-    color: beige;
+.timer-texto-principal {
+    color: rgb(66, 39, 184);
+    display: block;
+    margin-top: 100px;
+    font-size: xx-large;
+    font-weight: bold;
 }
 
 .button-reset {
     height: 5%;
     width: 5%;
+    padding-left: 10px;
     outline: none;
     text-align: center;
+}
+
+.input-custom {
+    width: 300px;
+}
+
+.input-text-color {
+    color: black;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.inputs {
+    margin-top: 58%;
 }

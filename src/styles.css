@@ -1,9 +1,30 @@
-body, html {
+body,
+html {
     height: 100%;
-    background-image: url(assets/images/csgo-background-2.png);
+    background-image: url(assets/images/csgo-wp.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
     background-color: #000000;
-  }
+}
+
+
+/* Cor do snackbar */
+
+.snackbar-customizado {
+    background-color: rgb(206, 72, 19);
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center !important;
+    z-index: 1001;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

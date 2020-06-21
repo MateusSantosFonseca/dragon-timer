@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
 
-import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 import { first } from 'rxjs/operators'
+
+import { GlobalService } from '../global';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class MainpageService {
-  constructor(private angularFireDB: AngularFireDatabase) { }
+  constructor(private angularFireDB: AngularFireDatabase, private globalService: GlobalService) { }
 
   tryResetCountdown(senha_argumento) {
     this.angularFireDB.list('logins')
@@ -24,10 +26,11 @@ export class MainpageService {
       let substituto = new Date().toLocaleString()
       this.angularFireDB.list('countdowns/').set(id, substituto)
         .catch((error: any) => {
-          console.error(error);
-        });
+          this.globalService.openSnackBar("Ocorreu um erro: " + error, 3000);
+        })
+        .finally(() => this.globalService.openSnackBar("O countdown timer foi resetado com sucesso!", 3000));
     } else {
-      alert('nao posso dar push')
+      this.globalService.openSnackBar("Senha incorreta, não foi possível resetar o countdown timer!", 3000);
     }
   }
 
