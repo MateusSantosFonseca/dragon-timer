@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "dragon-timer": {
+      "hosting": {
+        "dragon-timer": [
+          "dragon-timer"
+        ]
+      }
+    }
+  }
+}

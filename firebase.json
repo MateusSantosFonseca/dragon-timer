@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "dragon-timer",
+      "public": "dist/dragon-timer",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

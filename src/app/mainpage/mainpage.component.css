@@ -2,8 +2,13 @@
     padding-top: 32px;
 }
 
-.texto-principal{
+.texto-principal {
     color: beige;
+}
+
+.button-reset {
+    height: 5%;
+    width: 5%;
+    outline: none;
     text-align: center;
-    display: block;
 }

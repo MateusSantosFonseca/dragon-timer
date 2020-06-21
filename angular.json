@@ -118,8 +118,13 @@
               "devServerTarget": "dragon-timer:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "dragon-timer"
 }
