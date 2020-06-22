@@ -1,0 +1,22 @@
+@font-face {
+    font-family: font-digital;
+    src: url(./../../assets/fonts/DJB_Get_Digital.ttf);
+}
+
+.texto-principal {
+    color: rgba(228, 69, 29, 0.863);
+    display: block;
+    margin-top: 20%;
+    font-size: 58px;
+    font-family: font-digital, Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .texto-principal {
+        font-size: 28px;
+        margin-top: 130px;
+        display: block;
+    }
+}

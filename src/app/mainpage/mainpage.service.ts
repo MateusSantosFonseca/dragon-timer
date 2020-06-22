@@ -27,8 +27,8 @@ export class MainpageService {
     let dataCountdownString = data_countdown.toString()
     this.angularFireDB.list('countdowns/').set(id, dataCountdownString)
       .catch((error: any) => {
-        this.globalService.openSnackBar("Ocorreu um erro: " + error, 3000);
+        this.globalService.openSnackBar("Ocorreu um erro ao comunicar com firebase", 2500);
       })
-      .finally(() => this.globalService.openSnackBar("O countdown timer foi resetado com sucesso!", 3000));
+      .finally(() => this.globalService.openSnackBar("O countdown timer foi resetado com sucesso!", 2500));
   }
 }
