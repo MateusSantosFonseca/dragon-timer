@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
 
-
   firebase: {
     apiKey: "key",
     authDomain: "authDomain",

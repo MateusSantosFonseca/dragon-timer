@@ -1,6 +1,5 @@
 <div class="container text-center">
-    <countdown *ngIf="this.countdown_atual != undefined && this.countdown_atual != '0'" class="timer-texto-principal" [config]="{leftTime: this.countdown_atual}"></countdown>
-    <label *ngIf="this.countdown_atual == '0'" class="timer-texto-principal">Timer zerado!</label>
+    <countdown *ngIf="this.countdown_atual != undefined" class="timer-texto-principal" [config]="{leftTime: this.countdown_atual}"></countdown>
     <div *ngIf="this.dragon_senha != undefined" class="d-block margem-responsivo">
         <div class="row d-block inputs">
             <mat-form-field class="input-custom">
