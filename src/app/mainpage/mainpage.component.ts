@@ -14,12 +14,13 @@ import { GlobalService } from '../global';
 export class MainpageComponent implements OnInit {
   dragon_senha: string;
   senha: string;
+  countdown_atual: string;
 
   constructor(private mainpageService: MainpageService, private globalService: GlobalService) { 
     // atualiza o valor do html do timer pro valor recuperado do firebase e inicializa o timer
     this.dragon_senha = this.mainpageService.senhas[0]
-
     this.mainpageService.senhas.subscribe(senha => this.dragon_senha = String(senha[0]))
+    this.mainpageService.countdown_atual.subscribe(countdown => this.countdown_atual = String(countdown[0]))
   }
 
   ngOnInit(): void {

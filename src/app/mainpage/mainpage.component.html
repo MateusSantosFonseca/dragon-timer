@@ -1,10 +1,12 @@
 <div class="container text-center">
-    <label class="timer-texto-principal">timer-placeholder</label>
-    <div class="row d-block inputs">
-        <mat-form-field class="input-custom">
-            <mat-label class="input-text-color">Senha Dragon</mat-label>
-            <input class="input-text-color" matInput type="password" [(ngModel)]="senha">
-        </mat-form-field>
+    <label class="timer-texto-principal">{{countdown_atual}}</label>
+    <div *ngIf="this.dragon_senha != undefined" class="d-block margem-responsivo">
+        <div class="row d-block inputs">
+            <mat-form-field class="input-custom">
+                <mat-label class="input-text-color">Senha Dragon</mat-label>
+                <input class="input-text-color" matInput type="password" [(ngModel)]="senha">
+            </mat-form-field>
+        </div>
+        <input type="image" src="https://i.imgur.com/x21chM4.png" name="reset_countdown_timer" class="button-reset" id="reset_countdown_timer" (click)="resetar_countdown()" />
     </div>
-    <input *ngIf="this.dragon_senha != undefined" type="image" src="https://i.imgur.com/x21chM4.png" name="reset_countdown_timer" class="button-reset" id="reset_countdown_timer" (click)="resetar_countdown()" />
 </div>

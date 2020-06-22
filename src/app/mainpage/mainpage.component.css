@@ -1,13 +1,18 @@
+@font-face {
+    font-family: font-digital;
+    src: url(./../../assets/fonts/DJB_Get_Digital.ttf);
+}
+
 .container {
     padding-top: 32px;
 }
 
 .timer-texto-principal {
-    color: rgb(14, 28, 230);
+    color: rgb(7, 17, 160);
     display: block;
-    margin-top: 100px;
-    font-size: xx-large;
-    font-weight: bold;
+    margin-top: 14%;
+    font-size: 68px;
+    font-family: font-digital, Arial, Helvetica, sans-serif;
 }
 
 .button-reset {
@@ -16,6 +21,7 @@
     padding-left: 10px;
     outline: none;
     text-align: center;
+    margin-right: 2%;
 }
 
 .input-custom {
@@ -29,5 +35,34 @@
 }
 
 .inputs {
-    margin-top: 58%;
+    margin-top: 52%;
+}
+
+@media screen and (max-width: 1024px) {
+    .timer-texto-principal {
+        font-size: 36px;
+        margin-top: 12%;
+    }
+    .margem-responsivo {
+        margin-top: -4%;
+        margin-left: 5%;
+    }
+    .button-reset {
+        margin-right: 2%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .timer-texto-principal {
+        font-size: 36px;
+        margin-top: 25%;
+    }
+    .margem-responsivo {
+        margin-top: 140%;
+    }
+    .button-reset {
+        height: 12%;
+        width: 12%;
+        margin-right: 8%;
+    }
 }
