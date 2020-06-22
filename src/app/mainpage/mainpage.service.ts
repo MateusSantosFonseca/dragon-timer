@@ -5,33 +5,27 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { first } from 'rxjs/operators'
 
 import { GlobalService } from '../global';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class MainpageService {
-  constructor(private angularFireDB: AngularFireDatabase, private globalService: GlobalService) { }
+  senhas: Observable<any[]>;
 
-  tryResetCountdown(senha_argumento) {
-    this.angularFireDB.list('logins')
-      .valueChanges()
-      .pipe(first())
-      .subscribe(senha => this.updateCountdown(senha, senha_argumento))
+  constructor(private angularFireDB: AngularFireDatabase, private globalService: GlobalService) { 
+    this.senhas = angularFireDB.list('logins').valueChanges();
   }
 
-  updateCountdown(senha, senha_argumento) {
-    if (senha == senha_argumento) {
-      let id = "countdown_atual"
-      let substituto = new Date().toLocaleString()
-      this.angularFireDB.list('countdowns/').set(id, substituto)
-        .catch((error: any) => {
-          this.globalService.openSnackBar("Ocorreu um erro: " + error, 3000);
-        })
-        .finally(() => this.globalService.openSnackBar("O countdown timer foi resetado com sucesso!", 3000));
-    } else {
-      this.globalService.openSnackBar("Senha incorreta, não foi possível resetar o countdown timer!", 3000);
-    }
+  updateCountdown() {
+    let id = "countdown_atual"
+    let substituto = new Date().toLocaleString()
+    this.angularFireDB.list('countdowns/').set(id, substituto)
+      .catch((error: any) => {
+        this.globalService.openSnackBar("Ocorreu um erro: " + error, 3000);
+      })
+      .finally(() => this.globalService.openSnackBar("O countdown timer foi resetado com sucesso!", 3000));
   }
 
   get_countdown() {

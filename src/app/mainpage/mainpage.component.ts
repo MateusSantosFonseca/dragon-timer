@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { MainpageService } from './mainpage.service';
 
@@ -12,9 +12,14 @@ import { GlobalService } from '../global';
   styleUrls: ['./mainpage.component.css']
 })
 export class MainpageComponent implements OnInit {
+  dragon_senha: string;
   senha: string;
+
   constructor(private mainpageService: MainpageService, private globalService: GlobalService) { 
     // atualiza o valor do html do timer pro valor recuperado do firebase e inicializa o timer
+    this.dragon_senha = this.mainpageService.senhas[0]
+
+    this.mainpageService.senhas.subscribe(senha => this.dragon_senha = String(senha[0]))
   }
 
   ngOnInit(): void {
@@ -28,8 +33,10 @@ export class MainpageComponent implements OnInit {
   resetar_countdown() {
     if (this.senha == "" || this.senha == undefined) {
       this.globalService.openSnackBar("A senha não foi inserida, favor inserir antes de tentar resultar o countdown timer.", 3000);
+    } else if (this.dragon_senha == this.senha) {
+      this.mainpageService.updateCountdown();
     } else {
-      this.mainpageService.tryResetCountdown(this.senha);
+      this.globalService.openSnackBar("Senha inválida, inserir novamente.", 3000);
     }
 
     this.senha = "";

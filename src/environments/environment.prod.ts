@@ -2,7 +2,7 @@ export const environment = {
   production: true,
 
   firebase: {
-    apiKey: "key",
+    apiKey: "AIzaSyCkDX2T9PNDmA_pyr8A4uiOD_qigXji5CA",
     authDomain: "dragon-timer.firebaseapp.com",
     databaseURL: "https://dragon-timer.firebaseio.com",
     projectId: "dragon-timer",
