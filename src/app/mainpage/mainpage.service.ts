@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { AngularFireDatabase } from '@angular/fire/database';
 
-import { first } from 'rxjs/operators'
-
 import { GlobalService } from '../global';
 import { Observable } from 'rxjs';
 

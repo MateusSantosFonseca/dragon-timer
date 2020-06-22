@@ -7,8 +7,11 @@
     padding-top: 32px;
 }
 
+
+/*color: rgba(211, 114, 37, 1);*/
+
 .timer-texto-principal {
-    color: rgba(219, 78, 12, 0.863);
+    color: rgba(163, 70, 21, 0.8);
     display: block;
     margin-top: 14%;
     font-size: 70px;
@@ -58,7 +61,7 @@
         margin-top: 25%;
     }
     .margem-responsivo {
-        margin-top: 140%;
+        margin-top: 100%;
     }
     .button-reset {
         height: 12%;

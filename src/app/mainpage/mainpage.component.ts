@@ -22,7 +22,15 @@ export class MainpageComponent {
     this.mainpageService.countdown_atual.subscribe(countdown => this.countdown_atual = String(((Number(new Date(countdown[0]).valueOf() - new Date().valueOf() - 1000) / 1000).toFixed(0))))
   }
 
-  resetar_countdown() {
+  getCountdownAtual() {
+    let countdown_number = Number(this.countdown_atual)
+    if (Number(this.countdown_atual) <= 0)
+      return 0;
+    else
+      return countdown_number;
+  }
+
+  resetarCountdown() {
     if (this.senha == "" || this.senha == undefined) {
       this.globalService.openSnackBar("A senha não foi inserida, favor inserir antes de tentar resultar o countdown timer.", 2500);
     } else if (this.dragon_senha == this.senha) {
