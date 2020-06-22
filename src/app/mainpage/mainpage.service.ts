@@ -24,7 +24,7 @@ export class MainpageService {
     let id = "countdown_atual";
     let data_countdown = new Date();
     data_countdown.setDate(data_countdown.getDate() + 1)
-    let dataCountdownString = data_countdown.toLocaleString();
+    let dataCountdownString = data_countdown.toString()
     this.angularFireDB.list('countdowns/').set(id, dataCountdownString)
       .catch((error: any) => {
         this.globalService.openSnackBar("Ocorreu um erro: " + error, 3000);

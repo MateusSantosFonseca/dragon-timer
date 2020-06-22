@@ -20,7 +20,7 @@ export class MainpageComponent implements OnInit {
     // atualiza o valor do html do timer pro valor recuperado do firebase e inicializa o timer
     this.dragon_senha = this.mainpageService.senhas[0]
     this.mainpageService.senhas.subscribe(senha => this.dragon_senha = String(senha[0]))
-    this.mainpageService.countdown_atual.subscribe(countdown => this.countdown_atual = String(countdown[0]))
+    this.mainpageService.countdown_atual.subscribe(countdown => this.countdown_atual = String(((Number(new Date(countdown[0]).valueOf() - new Date().valueOf()) / 1000).toFixed(0))))
   }
 
   ngOnInit(): void {

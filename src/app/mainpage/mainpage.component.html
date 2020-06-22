@@ -1,5 +1,5 @@
 <div class="container text-center">
-    <label class="timer-texto-principal">{{countdown_atual}}</label>
+    <countdown *ngIf="this.countdown_atual != undefined" class="timer-texto-principal" [config]="{leftTime: this.countdown_atual}"></countdown>
     <div *ngIf="this.dragon_senha != undefined" class="d-block margem-responsivo">
         <div class="row d-block inputs">
             <mat-form-field class="input-custom">
